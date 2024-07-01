@@ -4,7 +4,7 @@ import './Footer.css'
 import { Link as ScrollLink } from 'react-scroll';
 
 
-function Footer({handleAboutClick,logoGotoTopOrHome,gotoWhytojoin}) {
+function Footer({handleAboutClick,logoGotoTopOrHome,gotoWhytojoin,setShowMemberRegGuide}) {
   return (
 
     <div className='footer'>
@@ -28,7 +28,7 @@ function Footer({handleAboutClick,logoGotoTopOrHome,gotoWhytojoin}) {
                 <h1 className=' text-2xl font-medium mb-5 text-gray-200'>Our Services</h1>
                 <ul className=' flex flex-col gap-4'>
                     <Link to="/atithi"><li><span className=' mr-3 text-xl'>{">"}</span>Register As an Atihti</li></Link>
-                    <li><span className=' mr-3 text-xl'>{">"}</span>Become a MSME DOST</li>
+                    <li className=' cursor-pointer' onClick={()=>setShowMemberRegGuide(true)}><span className=' mr-3 text-xl'>{">"}</span>Become a MSME DOST</li>
                     <Link to="/franchise"><li><span className=' mr-3 text-xl'>{">"}</span>Franchise Registration</li></Link>
                     <Link to="/contact"><li><span className=' mr-3 text-xl'>{">"}</span>Support</li></Link>
                 </ul>

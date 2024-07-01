@@ -153,7 +153,7 @@ const navigate = useNavigate()
         
         <Route path='*' element={<ErrorPage logoGotoTopOrHome={logoGotoTopOrHome}/>}/>
         </Routes>
-      <Footer handleAboutClick={handleAboutClick} logoGotoTopOrHome={logoGotoTopOrHome} gotoWhytojoin={gotoWhytojoin}/>
+      <Footer handleAboutClick={handleAboutClick} setShowMemberRegGuide={setShowMemberRegGuide} logoGotoTopOrHome={logoGotoTopOrHome} gotoWhytojoin={gotoWhytojoin}/>
      </div>
      <GototopButton />
     </>
