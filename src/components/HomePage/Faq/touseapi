@@ -1,0 +1,62 @@
+import React, { useState, useEffect } from "react";
+
+const FAQItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="mb-4">
+      <div
+        className="flex justify-between items-center bg-gray-200 py-2 px-4 rounded cursor-pointer"
+        onClick={toggleOpen}
+      >
+        <span>{question}</span>
+        <span className={`transform ${isOpen ? 'rotate-180' : 'rotate-0'} transition duration-300 ease-in-out`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d={isOpen ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"}
+            />
+          </svg>
+        </span>
+      </div>
+      {isOpen && <div className="bg-gray-100 py-2 px-4 mt-2 rounded">{answer}</div>}
+    </div>
+  );
+};
+
+export default function App() {
+  const [faqData, setFaqData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from API
+    fetch("your-api-endpoint")
+      .then((response) => response.json())
+      .then((data) => setFaqData(data))
+      .catch((error) => console.error("Error fetching FAQ data: ", error));
+  }, []);
+
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">FAQ Section</h1>
+      {faqData.map((faqItem, index) => (
+        <FAQItem
+          key={index}
+          question={faqItem.question}
+          answer={faqItem.answer}
+        />
+      ))}
+    </div>
+  );
+}

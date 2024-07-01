@@ -1,0 +1,160 @@
+
+
+/* seventh section why choose us */
+
+
+.why-choose-us {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.7s ease;
+}
+
+.spinning-circle1 {
+  height: 20vw;
+  width: 20vw;
+  border: 2px solid #fc8e4f;
+  position: absolute;
+  border-radius: 58% 42% 34% 66% / 50% 43% 57% 50%;
+  animation: chakra 9s infinite linear;
+  z-index: -1;
+}
+.spinning-circle2 {
+  height: 20vw;
+  width: 20vw;
+  border: 2px solid #fc8e4f;
+  position: absolute;
+  border-radius: 33% 67% 27% 73% / 52% 50% 50% 48%;
+  animation: chakra2 9s infinite linear;
+  z-index: -1;
+}
+#inside-circle {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  border-radius: 100% 55% 85% 69% / 64% 43% 97% 81%;
+  z-index: 2;
+}
+.play-button {
+  left: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.play-button-anim1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  border-radius: 50%;
+  animation: wave-anim 2s infinite linear;
+  z-index: 2;
+}
+.play-button-anim2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  border-radius: 50%;
+  animation: wave-anim 2s infinite linear;
+  animation-delay: 1s;
+  z-index: 2;
+}
+
+
+@media (max-width: 1150px) {
+
+  .spinning-circle1,
+  .spinning-circle2,
+  #inside-circle {
+    width: 25vw;
+    height: 25vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+@media (max-width: 950px) {
+
+  .spinning-circle1,
+  .spinning-circle2,
+  #inside-circle {
+    width: 30vw;
+    height: 30vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+@media (max-width: 600px) {
+
+  .spinning-circle1,
+  .spinning-circle2,
+  #inside-circle {
+    width: 60vw;
+    height: 60vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+
+
+@keyframes chakra {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes chakra2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+@keyframes wave-anim {
+  0% {
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+    opacity: 0.9;
+  }
+  25% {
+    opacity: 1;
+    border: 1.5px solid white;
+  }
+  50% {
+    opacity: 1;
+    border: 1.8px solid white;
+  }
+  75% {
+    opacity: 0.9;
+    border: 2px solid white;
+  }
+  100% {
+    height: 100px;
+    width: 100px;
+    opacity: 0.1;
+    border: 1.5px solid white;
+  }
+}

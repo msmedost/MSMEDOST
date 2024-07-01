@@ -1,0 +1,47 @@
+
+
+.gototop-section {
+  height: 45px;
+  width: 45px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 25px;
+  bottom: 25px;
+  z-index: 5;
+  transition: 0.5s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.first-circle {
+  box-sizing: border-box;
+  height: 44px;
+  width: 44px;
+  border: 2px solid #4438ca56;
+  border-radius: 50%;
+  padding: 2.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  rotate: 180deg;
+}
+
+.gototop {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: #7e22ce;
+}
+
+#svg-path {
+  stroke: #7e22ce;
+  fill: none;
+  stroke-width: 2px;
+  stroke-dasharray: 135;
+  stroke-dashoffset: 135;
+}
+
+
+
